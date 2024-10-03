@@ -1,14 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebasenew/home.dart';
-import 'package:firebasenew/login.dart';
-import 'package:firebasenew/profile/profilescreen.dart';
-import 'package:firebasenew/screens/dashboard.dart';
-import 'package:firebasenew/signup/signupscreen.dart';
 import 'package:firebasenew/widgets/custombottomnav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'login/loginew.dart';
+
 
 Future<void> main()async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,7 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: CustomBottomNavigation()
+      home: CustomBottomNavigation(),
     );
   });
   }
