@@ -3,9 +3,7 @@ import 'package:firebasenew/widgets/custombottomnav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
-
-Future<void> main()async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp(  options: DefaultFirebaseOptions.currentPlatform);
   if (Firebase.apps.isEmpty) {
@@ -27,22 +25,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return
-      ScreenUtilInit(
+    return ScreenUtilInit(
         designSize: const Size(390, 844),
-    minTextAdapt: true,
-    splitScreenMode: true,
-    builder: (context, child) {
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
           return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: CustomBottomNavigation(),
-    );
-  });
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+            ),
+            home: const CustomBottomNavigation(),
+          );
+        });
   }
 }
-

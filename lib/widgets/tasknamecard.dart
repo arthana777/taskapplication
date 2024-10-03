@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,14 +7,14 @@ class Tasknamecard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      padding: EdgeInsets.symmetric(horizontal: 14,vertical: 14),
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
       height: 40.h,
       width: double.infinity,
       decoration: BoxDecoration(
-        color:  Color(0xffF8F8F8),
+        color: const Color(0xffF8F8F8),
         borderRadius: BorderRadius.all(Radius.circular(10.r)),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black12,
             blurRadius: 5,
@@ -23,7 +22,7 @@ class Tasknamecard extends StatelessWidget {
           ),
         ],
       ),
-      child: Text(title??""),
+      child: Text(title ?? ""),
     );
   }
 }

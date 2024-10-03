@@ -5,7 +5,7 @@ import '../screens/dashboard.dart';
 import '../screens/taskcreation_screen.dart'; // Import your other screens as needed
 
 class CustomBottomNavigation extends StatefulWidget {
-  CustomBottomNavigation({super.key});
+  const CustomBottomNavigation({super.key});
 
   @override
   State<CustomBottomNavigation> createState() => _CustomBottomNavigationState();
@@ -14,11 +14,7 @@ class CustomBottomNavigation extends StatefulWidget {
 class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
   int pageIndex = 0;
   final List<Widget> pages = [
-    DashboardScreen(),
-    // TaskcreationScreen(),
-    // Add other screens here for navigation, e.g.:
-    // TaskScreen(),
-    // CompletedTasksScreen(),
+    const DashboardScreen(),
   ];
 
   @override
@@ -27,13 +23,13 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 8.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.dashboard),
+              icon: const Icon(Icons.dashboard),
               onPressed: () {
                 setState(() {
                   pageIndex = 0; // Navigate to another page
@@ -41,7 +37,7 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
               },
             ),
             IconButton(
-              icon: Icon(Icons.person_2),
+              icon: const Icon(Icons.person_2),
               onPressed: () {
                 setState(() {
                  // pageIndex = 1; // Navigate to another page
@@ -60,7 +56,7 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
           });
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => TaskcreationScreen()),
+            MaterialPageRoute(builder: (context) => const TaskcreationScreen()),
           );
         },
         child: Icon(Icons.add,size: 25.sp,color: Colors.white,),

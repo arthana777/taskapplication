@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,10 +20,7 @@ class _TaskcountCardState extends State<TaskcountCard> {
   @override
   void initState() {
     super.initState();
-
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +37,21 @@ class _TaskcountCardState extends State<TaskcountCard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(widget.title ?? "", style: GoogleFonts.poppins(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Colors.white)),
-              Text(widget.count??"", style: GoogleFonts.poppins(fontSize: 32.sp, fontWeight: FontWeight.w600, color: Colors.white)),
-              Text("Tasks", style: GoogleFonts.poppins(fontSize: 10.sp, fontWeight: FontWeight.w400, color: Colors.white)),
+              Text(widget.title ?? "",
+                  style: GoogleFonts.poppins(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white)),
+              Text(widget.count ?? "",
+                  style: GoogleFonts.poppins(
+                      fontSize: 32.sp,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white)),
+              Text("Tasks",
+                  style: GoogleFonts.poppins(
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white)),
             ],
           ),
         ),

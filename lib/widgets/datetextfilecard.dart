@@ -19,22 +19,7 @@ class _DatetextfileCardState extends State<DatetextfileCard> {
 
   DateTime _dateTime=DateTime.now();
   String? formattedDate;
-  DateTime? _selectedDate;
-  // Date validation function
-  String? _validateDate(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Please enter a date';
-    }
-    // Define the date format (e.g., dd/MM/yyyy or MM/dd/yyyy based on your locale)
-    DateFormat dateFormat = DateFormat('dd/MM/yyyy');
-    try {
-      // Try to parse the input as a date
-      dateFormat.parseStrict(value);
-    } catch (e) {
-      return 'Invalid date format';
-    }
-    return null; // Return null if validation is successful
-  }
+
   void _showDatepicker() {
     showDatePicker(
       context: context,
@@ -45,10 +30,10 @@ class _DatetextfileCardState extends State<DatetextfileCard> {
       if (value != null) {
         setState(() {
           _dateTime = value;
-          formattedDate = DateFormat('dd MMM yyyy').format(_dateTime!);
+          formattedDate = DateFormat('dd MMM yyyy').format(_dateTime);
         });
         if (widget.onDateSelected != null) {
-          widget.onDateSelected!(_dateTime);
+          widget.onDateSelected(_dateTime);
         }
       }
     });
@@ -80,9 +65,9 @@ class _DatetextfileCardState extends State<DatetextfileCard> {
             height: 50.h,
             width: 140.w,
             decoration: BoxDecoration(
-              color: Color(0xffF8F8F8),
+              color: const Color(0xffF8F8F8),
               borderRadius: BorderRadius.all(Radius.circular(10.r)),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black12,
                   blurRadius: 5,
